@@ -1,1 +1,264 @@
-login interface
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind | Artisan Coffee Shop</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #faf7f2;
+            color: #332211;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #2c1d11;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4a373;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 2rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #d4a373;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(44, 29, 17, 0.7), rgba(44, 29, 17, 0.7)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        header p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .btn {
+            background-color: #d4a373;
+            color: #2c1d11;
+            padding: 0.75rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #e6b88a;
+        }
+
+        /* Main Content Container */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Menu Section */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #d4a373;
+            margin: 0.5rem auto 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .card h3 {
+            margin: 1rem 0 0.5rem;
+        }
+        .price {
+            color: #d4a373;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        input, textarea {
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        form button {
+            background-color: #2c1d11;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        form button:hover {
+            background-color: #4a321e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c1d11;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">☕ The Daily Grind</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Header -->
+    <header>
+        <h1>Freshly Brewed Daily</h1>
+        <p>Crafting perfect specialty coffee and artisan pastries in a cozy atmosphere designed for creators and dreamers.</p>
+        <a href="#menu" class="btn">View Menu</a>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Menu Grid Section -->
+        <section id="menu">
+            <h2 class="section-title">Our Favorites</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Vanilla Latte</h3>
+                    <p>Espresso with steamed milk and premium vanilla syrup.</p>
+                    <p class="price">$4.50</p>
+                </div>
+                <div class="card">
+                    <h3>Cold Brew</h3>
+                    <p>Slow-steeped for 16 hours, served over ice.</p>
+                    <p class="price">$4.00</p>
+                </div>
+                <div class="card">
+                    <h3>Almond Croissant</h3>
+                    <p>Flaky pastry filled with sweet almond frangipane.</p>
+                    <p class="price">$3.75</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Hours Section -->
+        <section id="contact">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-container">
+                <div>
+                    <h3>Hours of Operation</h3>
+                    <p style="margin-bottom: 1rem;">Monday - Friday: 6:00 AM - 6:00 PM</p>
+                    <p style="margin-bottom: 2rem;">Saturday - Sunday: 7:00 AM - 4:00 PM</p>
+                    <h3>Location</h3>
+                    <p>123 Coffee Lane, Espresso City, CA 90210</p>
+                </div>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <h3>Drop Us a Line</h3>
+                    <br>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required placeholder="Your Name">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Your Email">
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required placeholder="How can we help you?"></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Daily Grind. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
